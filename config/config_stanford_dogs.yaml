@@ -1,0 +1,33 @@
+# Dataset configuration - Stanford Dogs
+dataset:
+  name: "stanford_dogs"
+  domain: "photo"
+  loader: "imagefolder"
+  path: "/mnt/sda/runhaofu/GraphDreamer/data/stanford_dogs/real_dataset"
+  splits:
+    train: "train"
+    test: "test"
+  image_column: "image"
+  label_column: "label"
+  label_name_column: null
+  strip_label_prefix: false
+  cache:
+    test_features_path: "./features/stanford_dogs_real_test_features.npz"
+
+# Model configuration
+model:
+  vision_encoder: "openai/clip-vit-large-patch14"
+  feature_dim: 768
+
+# Training configuration
+training:
+  classifier: "logistic_regression"
+  test_size: 0.2
+  random_state: 42
+  max_iter: 1000
+
+# Paths
+paths:
+  features_dir: "./features"
+  models_dir: "./saved_models"
+  results_dir: "./results"

@@ -1,0 +1,35 @@
+# Dataset configuration - CUB-200-2011 Painting domain
+# Shares the same 200 bird classes as cub2011, but images are paintings.
+# Co-objects / scene graphs / synthetic images are shared with cub2011.
+dataset:
+  name: "cub2011_painting"
+  domain: "painting"
+  loader: "imagefolder"
+  path: "/mnt/sda/runhaofu/GraphDreamer/data/cub2011_painting/real_dataset"
+  splits:
+    train: "."
+    test: "."
+  image_column: "image"
+  label_column: "label"
+  label_name_column: null
+  strip_label_prefix: true
+  cache:
+    test_features_path: "./features/cub2011_painting_real_test_features.npz"
+
+# Model configuration
+model:
+  vision_encoder: "openai/clip-vit-large-patch14"
+  feature_dim: 768
+
+# Training configuration
+training:
+  classifier: "logistic_regression"
+  test_size: 0.2
+  random_state: 42
+  max_iter: 1000
+
+# Paths
+paths:
+  features_dir: "./features"
+  models_dir: "./saved_models"
+  results_dir: "./results"

@@ -1,0 +1,114 @@
+# =============================================================================
+# Secrets and keys — NEVER commit these
+# =============================================================================
+config/key.yaml
+**/key.yaml
+**/*key*.yaml
+*.key
+.env
+.env.*
+secrets/
+**/secrets/
+credentials.json
+*.pem
+
+# =============================================================================
+# Generated data, results, and experiment outputs
+# =============================================================================
+data/
+results/
+features/
+output/
+test/
+logs/
+*.log
+
+# =============================================================================
+# Large model weights and checkpoints
+# =============================================================================
+*.safetensors
+*.bin
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.h5
+*.hdf5
+checkpoints/
+wandb/
+
+# =============================================================================
+# Large data formats (numpy, pickle, columnar, key-value)
+# =============================================================================
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.arrow
+*.lmdb
+*.tfrecord
+*.tfrecord.gz
+
+# =============================================================================
+# Archives (typically too large for git; use Releases or external storage)
+# =============================================================================
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+*.xz
+*.7z
+*.rar
+
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# =============================================================================
+# Virtual environments
+# =============================================================================
+.venv/
+venv/
+env/
+ENV/
+
+# =============================================================================
+# IDE / editor / OS / agent local state
+# =============================================================================
+.idea/
+.vscode/
+.claude/
+**/.claude/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
